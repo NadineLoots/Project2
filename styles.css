@@ -1,0 +1,125 @@
+:root {
+    --bg-color: #f8f9fa;
+    --calculator-bg: #ffffff;
+    --button-bg: #e9ecef;
+    --button-hover: #dee2e6;
+    --operation-bg: #0077b6;
+    --operation-hover: #023e8a;
+    --equals-bg: #2a9d8f;
+    --equals-hover: #1d7874;
+    --clear-bg: #e63946;
+    --clear-hover: #d62839;
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.calculator {
+    background: var(--calculator-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+}
+
+.display {
+    padding: 20px;
+    text-align: right;
+    background: var(--text-dark);
+    color: var(--text-light);
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    height: 24px;
+}
+
+.current-operand {
+    color: white;
+    font-size: 2.5rem;
+    margin-top: 10px;
+}
+
+button {
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--button-bg);
+    color: var(--text-dark);
+}
+
+button:hover {
+    background: var(--button-hover);
+}
+
+button[data-action="operation"] {
+    background: var(--operation-bg);
+    color: var(--text-light);
+}
+
+button[data-action="operation"]:hover {
+    background: var(--operation-hover);
+}
+
+button[data-action="calculate"] {
+    background: var(--equals-bg);
+    color: var(--text-light);
+}
+
+button[data-action="calculate"]:hover {
+    background: var(--equals-hover);
+}
+
+button[data-action="clear"] {
+    background: var(--clear-bg);
+    color: var(--text-light);
+}
+
+button[data-action="clear"]:hover {
+    background: var(--clear-hover);
+}
+
+button[data-action="delete"] {
+    background: var(--button-bg);
+    color: var(--text-dark);
+}
+
+button[data-action="delete"]:hover {
+    background: var(--button-hover);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1px;
+}
